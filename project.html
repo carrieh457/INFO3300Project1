@@ -44,8 +44,7 @@ svg{
   margin:1em;
   padding: 1em;
   border: solid 1px;
-  display: block;
-  margin: auto;
+  display: inline-block;
 }
 
 #svg-container{
@@ -77,9 +76,8 @@ svg{
 
 
       <h3>2006 - 2007 Season </h3>
-      <svg id="one" width='500' height='470'></svg>
-
       <h3>2016 - 2017 Season </h3>
+      <svg id="one" width='500' height='470'></svg>
       <svg id="two" width='500' height='470'></svg>
 
 
@@ -117,7 +115,7 @@ for(var i = 0; i < array.length; i++) {
 		    .attr('cy', 470 - (j*10+5))
 		    .attr('r', rScale(array2[i][j]+0.01))
 		    .attr('fill', color.toString())
-		} 
+		}
 		else if (array2[i][j] > 20) {
 			svg.append('circle')
 		    .attr('cx', i*10+5)
@@ -145,7 +143,7 @@ for(var i = 0; i < array3.length; i++) {
 		    .attr('cy', 470 - (j*10+5))
 		    .attr('r', rScale(array4[i][j]+0.01))
 		    .attr('fill', color.toString())
-		} 
+		}
 		else if (array4[i][j] > 20) {
 			svg2.append('circle')
 		    .attr('cx', i*10+5)
