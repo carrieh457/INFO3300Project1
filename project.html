@@ -83,26 +83,28 @@ h3{
       </linearGradient>
       <style type="text/css"><![CDATA[
         #rect1 { fill: url(#efficiency); }
-        .stop1 { stop-color: red; }
+        .stop1 { stop-color: blue; }
         .stop2 { stop-color: purple; stop-opacity: 1; }
-        .stop3 { stop-color: blue; }
+        .stop3 { stop-color: red; }
       ]]></style>
 
   </defs>
-    <rect id="rect1" x="80" y="10" rx="15" ry="15" width="400" height="40"/>
-
+    <text x="60" y="30" alignment-baseline="middle" text-anchor="middle"> Efficiency: </text>
+    <rect id="rect1" x="100" y="10" rx="15" ry="15" width="400" height="40"/>
+    <text x="630" y="20" alignment-baseline="middle" text-anchor="middle"> Shot Frequency: </text>
     </svg>
     <script>
       var svg = d3.select("#key");
       for (var i = 0; i < 8; i++){
         svg.append('circle')
-        .attr('cx', 500 + (50 * i))
+        .attr('cx', 630 + (50 * i))
         .attr('cy', 20)
         .attr('r', i)
         .attr('fill', "black");
       }
 
     </script>
+
 
 
 
