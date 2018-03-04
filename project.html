@@ -73,7 +73,7 @@ h3{
         culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
 
-    <svg id="key" width ="1000" height="50">
+    <svg id="key" width ="1200" height="90">
               <defs>
 
       <linearGradient id="efficiency">
@@ -91,13 +91,22 @@ h3{
   </defs>
     <text x="60" y="30" alignment-baseline="middle" text-anchor="middle"> Efficiency: </text>
     <rect id="rect1" x="100" y="10" rx="15" ry="15" width="400" height="40"/>
+    <text x="90" y="70" alignment-baseline="middle" text-anchor="middle"> a </text>
+    <text x="290" y="70" alignment-baseline="middle" text-anchor="middle"> b </text>
+    <text x="490" y="70" alignment-baseline="middle" text-anchor="middle"> c </text>
+
+    <text x="690" y="70" alignment-baseline="middle" text-anchor="middle"> a </text>
+    <text x="840" y="70" alignment-baseline="middle" text-anchor="middle"> b </text>
+    <text x="990" y="70" alignment-baseline="middle" text-anchor="middle"> c </text>
+
     <text x="630" y="20" alignment-baseline="middle" text-anchor="middle"> Shot Frequency: </text>
+
     </svg>
     <script>
       var svg = d3.select("#key");
       for (var i = 0; i < 8; i++){
         svg.append('circle')
-        .attr('cx', 630 + (50 * i))
+        .attr('cx', 650 + (50 * i))
         .attr('cy', 20)
         .attr('r', i)
         .attr('fill', "black");
