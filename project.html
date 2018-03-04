@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>INFO 3300 - Project Start</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 <script src='https://d3js.org/d3.v4.min.js'></script>
 <script src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js'></script>
@@ -32,13 +33,56 @@ h1{
   vertical-align: middle;
 }
 
-h3{
+
+
+
+
+@media only screen and (max-width: 1275px) {
+
+h3#smaller{
+  display: block;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  padding: 0.5em;
+}
+
+h3#bigger{
+  display:none;
+}
+
+#one, #two{
+  margin:1em;
+  padding: 1em;
+  border: solid 1px;
+  display: block;
+  margin:auto;
+}
+#key1, #key2{
+  
+  margin:1em;
+  padding: 1em;
+  display: block;
+  margin:auto;
+}
+
+
+}
+
+@media only screen and (min-width: 1275px) {
+
+h3#bigger{
   display: inline-block;
   width: 48%;
   margin: auto;
   text-align: center;
   padding: 0.5em;
 }
+
+h3#smaller{
+  display:none;
+}
+
 
 #one, #two{
   margin:1em;
@@ -51,6 +95,23 @@ h3{
   margin: auto;
 
 }
+
+#key1, #key2{
+  width: 43%;
+  margin:1em;
+  padding: 1em;
+  display: inline-block;
+}
+
+
+
+}
+
+
+
+
+
+
 
 </style>
 </head>
@@ -73,7 +134,7 @@ h3{
         culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
 
-    <svg id="key" width ="1200" height="90">
+    <svg id="key1" width ="600" height="90">
               <defs>
 
       <linearGradient id="efficiency">
@@ -95,33 +156,41 @@ h3{
     <text x="290" y="70" alignment-baseline="middle" text-anchor="middle"> b </text>
     <text x="490" y="70" alignment-baseline="middle" text-anchor="middle"> c </text>
 
-    <text x="690" y="70" alignment-baseline="middle" text-anchor="middle"> a </text>
-    <text x="840" y="70" alignment-baseline="middle" text-anchor="middle"> b </text>
-    <text x="990" y="70" alignment-baseline="middle" text-anchor="middle"> c </text>
-
-    <text x="630" y="20" alignment-baseline="middle" text-anchor="middle"> Shot Frequency: </text>
+    
 
     </svg>
+
+    <svg id="key2" width ="500" height="90">
+    <text x="30" y="20" alignment-baseline="middle" text-anchor="middle"> Shot Frequency: </text>
+    <text x="100" y="70" alignment-baseline="middle" text-anchor="middle"> a </text>
+    <text x="250" y="70" alignment-baseline="middle" text-anchor="middle"> b </text>
+    <text x="400" y="70" alignment-baseline="middle" text-anchor="middle"> c </text>
+    </svg>
+    
     <script>
-      var svg = d3.select("#key");
+      var svg = d3.select("#key2");
       for (var i = 0; i < 8; i++){
         svg.append('circle')
-        .attr('cx', 650 + (50 * i))
+        .attr('cx', 50 + (50 * i))
         .attr('cy', 20)
         .attr('r', i)
         .attr('fill', "black");
-      }
+  }
 
     </script>
 
 
 
 
-      <h3>2006 - 2007 Season </h3>
-      <h3>2016 - 2017 Season </h3>
+      <h3 id="bigger">2006 - 2007 Season </h3>
+      <h3 id="bigger">2016 - 2017 Season </h3>
+
+      <h3 id="smaller">2006 - 2007 Season </h3>
       <svg id="one" width='500' height='470'>
         
       </svg>
+
+      <h3 id="smaller">2016 - 2017 Season </h3>
       <svg id="two" width='500' height='470'></svg>
 
   <script>
