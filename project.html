@@ -34,22 +34,12 @@ h1{
   vertical-align: middle;
 }
 
-
-
-
-
-/*@media only screen and (max-width: 1275px) {*/
-
-h3#smaller{
+h3{
   display: block;
   width: 90%;
   margin: auto;
   text-align: center;
   padding: 0.5em;
-}
-
-h3#bigger{
-  display:none;
 }
 
 #zero, #one, #two{
@@ -81,12 +71,6 @@ h3#bigger{
 }
 
 }
-
-
-
-
-
-
 
 </style>
 </head>
@@ -156,18 +140,13 @@ h3#bigger{
 
     </script>
 
-
-      <h3 id="bigger">1997 - 1998 Season </h3>
-      <h3 id="bigger">2006 - 2007 Season </h3>
-      <h3 id="bigger">2016 - 2017 Season </h3>
-
-      <h3 id="smaller">1997 - 1998 Season </h3>
+      <h3>1997 - 1998 Season </h3>
       <svg id="zero" width='700' height='470'></svg>
 
-      <h3 id="smaller">2006 - 2007 Season </h3>
+      <h3>2006 - 2007 Season </h3>
       <svg id="one" width='700' height='470'></svg>
 
-      <h3 id="smaller">2016 - 2017 Season </h3>
+      <h3>2016 - 2017 Season </h3>
       <svg id="two" width='700' height='470'></svg>
 
   <script>
@@ -283,10 +262,10 @@ h3#bigger{
             color: "red",
             radius: 50
           },
-          x: 520,
-          y: 230,
-          dy: -107,
-          dx: 10
+          x: 580,
+          y: 410,
+          dy: -277,
+          dx: -20
         }
         ].map(function(d){ d.color = "red"; return d})
 
