@@ -56,7 +56,7 @@ h3{
 
 @media only screen and (max-width: 1275px) {
 
-#key1, #key2{
+#key1, #key2, #key3, #key4, #key5, #key6{
   
   margin:1em;
   padding: 1em;
@@ -67,7 +67,7 @@ h3{
 }
 
 @media only screen and (min-width: 1275px){
-  #key1, #key2{
+  #key1, #key2, #key3, #key4, #key5, #key6{
   width: 43%;
   margin:1em;
   padding: 1em;
@@ -99,7 +99,7 @@ h3{
         culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
 
-    <svg id="key1" width ="600" height="90">
+    <svg id="key3" width ="600" height="90">
               <defs>
 
       <linearGradient id="efficiency">
@@ -117,6 +117,54 @@ h3{
   </defs>
     <text x="50" y="30" alignment-baseline="middle" text-anchor="middle"> Points Per Shot: </text>
     <rect id="rect1" x="100" y="10" rx="15" ry="15" width="400" height="40"/>
+    <text x="90" y="70" alignment-baseline="middle" text-anchor="middle"> 0.7 </text>
+    <text x="290" y="70" alignment-baseline="middle" text-anchor="middle"> 1 </text>
+    <text x="490" y="70" alignment-baseline="middle" text-anchor="middle"> 1.3 </text>
+
+    
+
+    </svg>
+
+    <svg id="key4" width ="500" height="90">
+    <text x="30" y="20" alignment-baseline="middle" text-anchor="middle"> Shot Frequency: </text>
+    <text x="100" y="70" alignment-baseline="middle" text-anchor="middle"> Low </text>
+    <text x="250" y="70" alignment-baseline="middle" text-anchor="middle"> Medium </text>
+    <text x="400" y="70" alignment-baseline="middle" text-anchor="middle"> High </text>
+    </svg>
+    
+    <script>
+      var svg = d3.select("#key4");
+      for (var i = 0; i < 8; i++){
+        svg.append('circle')
+        .attr('cx', 50 + (50 * i))
+        .attr('cy', 20)
+        .attr('r', i)
+        .attr('fill', "black");
+  }
+
+    </script>
+
+      <h3>1997 - 1998 Season </h3>
+      <svg id="zero" width='700' height='470'></svg>
+
+      <svg id="key5" width ="600" height="90">
+              <defs>
+
+      <linearGradient id="efficiency2">
+        <stop class="stop1" offset="0%"/>
+        <stop class="stop2" offset="50%"/>
+        <stop class="stop3" offset="100%"/>
+      </linearGradient>
+      <style type="text/css"><![CDATA[
+        #rect2 { fill: url(#efficiency2); }
+        .stop1 { stop-color: blue; }
+        .stop2 { stop-color: purple; stop-opacity: 1; }
+        .stop3 { stop-color: red; }
+      ]]></style>
+
+  </defs>
+    <text x="50" y="30" alignment-baseline="middle" text-anchor="middle"> Points Per Shot: </text>
+    <rect id="rect2" x="100" y="10" rx="15" ry="15" width="400" height="40"/>
     <text x="90" y="70" alignment-baseline="middle" text-anchor="middle"> 0.7 </text>
     <text x="290" y="70" alignment-baseline="middle" text-anchor="middle"> 1 </text>
     <text x="490" y="70" alignment-baseline="middle" text-anchor="middle"> 1.3 </text>
@@ -144,11 +192,53 @@ h3{
 
     </script>
 
-      <h3>1997 - 1998 Season </h3>
-      <svg id="zero" width='700' height='470'></svg>
-
       <h3>2006 - 2007 Season </h3>
       <svg id="one" width='700' height='470'></svg>
+
+          <svg id="key5" width ="600" height="90">
+              <defs>
+
+      <linearGradient id="efficiency3">
+        <stop class="stop1" offset="0%"/>
+        <stop class="stop2" offset="50%"/>
+        <stop class="stop3" offset="100%"/>
+      </linearGradient>
+      <style type="text/css"><![CDATA[
+        #rect3 { fill: url(#efficiency3); }
+        .stop1 { stop-color: blue; }
+        .stop2 { stop-color: purple; stop-opacity: 1; }
+        .stop3 { stop-color: red; }
+      ]]></style>
+
+  </defs>
+    <text x="50" y="30" alignment-baseline="middle" text-anchor="middle"> Points Per Shot: </text>
+    <rect id="rect3" x="100" y="10" rx="15" ry="15" width="400" height="40"/>
+    <text x="90" y="70" alignment-baseline="middle" text-anchor="middle"> 0.7 </text>
+    <text x="290" y="70" alignment-baseline="middle" text-anchor="middle"> 1 </text>
+    <text x="490" y="70" alignment-baseline="middle" text-anchor="middle"> 1.3 </text>
+
+    
+
+    </svg>
+
+    <svg id="key6" width ="500" height="90">
+    <text x="30" y="20" alignment-baseline="middle" text-anchor="middle"> Shot Frequency: </text>
+    <text x="100" y="70" alignment-baseline="middle" text-anchor="middle"> Low </text>
+    <text x="250" y="70" alignment-baseline="middle" text-anchor="middle"> Medium </text>
+    <text x="400" y="70" alignment-baseline="middle" text-anchor="middle"> High </text>
+    </svg>
+    
+    <script>
+      var svg = d3.select("#key6");
+      for (var i = 0; i < 8; i++){
+        svg.append('circle')
+        .attr('cx', 50 + (50 * i))
+        .attr('cy', 20)
+        .attr('r', i)
+        .attr('fill', "black");
+  }
+
+    </script>
 
       <h3>2016 - 2017 Season </h3>
       <svg id="two" width='700' height='470'></svg>
