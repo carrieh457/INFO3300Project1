@@ -48,6 +48,10 @@ h3{
   border: solid 1px;
   display: block;
   margin:auto;
+  background-image: url("court.png");
+  background-repeat: no-repeat;
+  background-size: 700px 470px;
+  background-position: center; 
 }
 
 @media only screen and (max-width: 1275px) {
@@ -155,15 +159,15 @@ h3{
     var svg1 = d3.select('#one');
     var svg2 = d3.select('#two');
 
-    //based on code on d3 annotation circles on http://d3-annotation.susielu.com
+  //based on code on d3 annotation circles on http://d3-annotation.susielu.com
 
         const annotations = [
         {
 
           type: d3.annotationCalloutCircle,
           note: {
-            label: "20 years ago far 2s from both sides around the edge of the court had higher popularity",
-            title: "Mid range corner shots",
+            label: "In the 1990s, teams took lots of inefficient mid-range shots",
+            title: "Low-Percentage Long 2s",
             wrap: 190
           },
 
@@ -191,8 +195,8 @@ h3{
 
           type: d3.annotationCalloutCircle,
           note: {
-            label: "10 years later shooting shifts from long corner 2s to corner 3s",
-            title: "Corner 3s",
+            label: "In the 2000s, teams shift from long baseline 2s to corner 3s",
+            title: "Corner 3s Become Popular",
             wrap: 190
           },
 
@@ -200,15 +204,15 @@ h3{
             color: "red",
             radius: 50
           },
-          x: 100,
+          x: 110,
           y: 410,
           dy: -277,
           dx: 0
         },{
         type: d3.annotationCalloutCircle,
           note: {
-            label: "More shots are taken in general from beyond the arc, perhaps from coaches and players noticing the higher efficiency from such shots.",
-            title: "General 3 point shots",
+            label: "Teams begin to use analytics, shoot more from beyond the arc",
+            title: "Increase in 3s",
             wrap: 190
           },
 
@@ -237,8 +241,8 @@ h3{
 
           type: d3.annotationCalloutCircle,
           note: {
-            label: "Longer 2s which have always statistically been less efficient are slowly starting to disappear from the game.",
-            title: "No more long 2s",
+            label: "Less efficient long 2s are disappearing from the game",
+            title: "No More Mid-Range",
             wrap: 190
           },
 
@@ -246,15 +250,15 @@ h3{
             color: "red",
             radius: 50
           },
-          x: 240,
+          x: 220,
           y: 330,
           dy: -177,
           dx: -30
         },{
         type: d3.annotationCalloutCircle,
           note: {
-            label: "Modern day professional basketball has higher frequency 3s than ever. The secret of how efficient 3 point shooting really is is out.",
-            title: "Everyone's shooting 3s",
+            label: "The secret that 3 is worth more than 2 must have gotten out",
+            title: "The 3-Point Era Is Here",
             wrap: 190
           },
 
@@ -262,10 +266,10 @@ h3{
             color: "red",
             radius: 50
           },
-          x: 580,
-          y: 410,
-          dy: -277,
-          dx: -20
+          x: 520,
+          y: 230,
+          dy: -107,
+          dx: 10
         }
         ].map(function(d){ d.color = "red"; return d})
 
@@ -314,15 +318,15 @@ for(var i = 0; i < array5.length; i++) {
       }
       if (array6[i][j] > 25 && array6[i][j] < 275) {
           svg0.append('circle')
-        .attr('cx', i*10+102.5)
-        .attr('cy', 470 - (j*10+5))
+        .attr('cx', i*10+105)
+        .attr('cy', 470 - (j*10+10))
         .attr('r', rScale(array6[i][j]+0.01))
         .attr('fill', color)
     }
     else if (array6[i][j] > 25) {
       svg0.append('circle')
-        .attr('cx', i*10+102.5)
-        .attr('cy', 470 - (j*10+5))
+        .attr('cx', i*10+105)
+        .attr('cy', 470 - (j*10+10))
         .attr('r', 8)
         .style('fill', color)
     }
@@ -342,15 +346,15 @@ for(var i = 0; i < array3.length; i++) {
       }
       if (array4[i][j] > 25 && array4[i][j] < 275) {
           svg1.append('circle')
-        .attr('cx', i*10+102.5)
-        .attr('cy', 470 - (j*10+5))
+        .attr('cx', i*10+105)
+        .attr('cy', 470 - (j*10+10))
         .attr('r', rScale(array4[i][j]+0.01))
         .attr('fill', color)
     }
     else if (array4[i][j] > 25) {
       svg1.append('circle')
-        .attr('cx', i*10+102.5)
-        .attr('cy', 470 - (j*10+5))
+        .attr('cx', i*10+105)
+        .attr('cy', 470 - (j*10+10))
         .attr('r', 8)
         .attr('fill', color)
     }
@@ -374,8 +378,8 @@ for(var i = 0; i < array.length; i++) {
     	}
     	if (array2[i][j] > 25 && array2[i][j] < 275) {
     	    svg2.append('circle')
-		    .attr('cx', i*10+102.5)
-		    .attr('cy', 470 - (j*10+5))
+		    .attr('cx', i*10+105)
+		    .attr('cy', 470 - (j*10+10))
 		    .attr('r', rScale(array2[i][j]+0.01))
 		    .attr('fill', color)
 		}
@@ -384,8 +388,8 @@ for(var i = 0; i < array.length; i++) {
         console.log("here")
       }
 			svg2.append('circle')
-		    .attr('cx', i*10+102.5)
-		    .attr('cy', 470 - (j*10+5))
+		    .attr('cx', i*10+105)
+		    .attr('cy', 470 - (j*10+10))
 		    .attr('r', 8)
 		    .style('fill', color)
     }
