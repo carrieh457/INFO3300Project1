@@ -5,6 +5,7 @@
 <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 <script src='https://d3js.org/d3.v4.min.js'></script>
 <script src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js'></script>
+<script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
 
 <style>
 
@@ -37,7 +38,7 @@ h1{
 
 
 
-@media only screen and (max-width: 1275px) {
+/*@media only screen and (max-width: 1275px) {*/
 
 h3#smaller{
   display: block;
@@ -58,6 +59,9 @@ h3#bigger{
   display: block;
   margin:auto;
 }
+
+@media only screen and (max-width: 1275px) {
+
 #key1, #key2{
   
   margin:1em;
@@ -66,44 +70,15 @@ h3#bigger{
   margin:auto;
 }
 
-
 }
 
-@media only screen and (min-width: 1275px) {
-
-h3#bigger{
-  display: inline-block;
-  width: 48%;
-  margin: auto;
-  text-align: center;
-  padding: 0.5em;
-}
-
-h3#smaller{
-  display:none;
-}
-
-
-#zero, #one, #two{
-  margin:1em;
-  padding: 1em;
-  border: solid 1px;
-  display: inline-block;
-}
-
-#svg-container{
-  margin: auto;
-
-}
-
-#key1, #key2{
+@media only screen and (min-width: 1275px){
+  #key1, #key2{
   width: 43%;
   margin:1em;
   padding: 1em;
   display: inline-block;
 }
-
-
 
 }
 
@@ -116,6 +91,8 @@ h3#smaller{
 </style>
 </head>
 <body>
+
+
 
 <div id="background" >
   <div id="container">
@@ -185,19 +162,144 @@ h3#smaller{
       <h3 id="bigger">2016 - 2017 Season </h3>
 
       <h3 id="smaller">1997 - 1998 Season </h3>
-      <svg id="zero" width='500' height='470'></svg>
+      <svg id="zero" width='700' height='470'></svg>
 
       <h3 id="smaller">2006 - 2007 Season </h3>
-      <svg id="one" width='500' height='470'></svg>
+      <svg id="one" width='700' height='470'></svg>
 
       <h3 id="smaller">2016 - 2017 Season </h3>
-      <svg id="two" width='500' height='470'></svg>
+      <svg id="two" width='700' height='470'></svg>
 
   <script>
 
     var svg0 = d3.select('#zero')
     var svg1 = d3.select('#one');
     var svg2 = d3.select('#two');
+
+    //based on code on d3 annotation circles on http://d3-annotation.susielu.com
+
+        const annotations = [
+        {
+
+          type: d3.annotationCalloutCircle,
+          note: {
+            label: "20 years ago far 2s from both sides around the edge of the court had higher popularity",
+            title: "Mid range corner shots",
+            wrap: 190
+          },
+
+          subject: {
+            color: "red",
+            radius: 50
+          },
+          x: 200,
+          y: 410,
+          dy: -207,
+          dx: -22
+        }].map(function(d){ d.color = "red"; return d})
+
+        const makeAnnotations = d3.annotation()
+          .type(d3.annotationLabel)
+          .annotations(annotations)
+
+        svg0
+          .append("g")
+          .attr("class", "annotation-group")
+          .call(makeAnnotations)
+
+        const annotations1 = [
+        {
+
+          type: d3.annotationCalloutCircle,
+          note: {
+            label: "10 years later shooting shifts from long corner 2s to corner 3s",
+            title: "Corner 3s",
+            wrap: 190
+          },
+
+          subject: {
+            color: "red",
+            radius: 50
+          },
+          x: 100,
+          y: 410,
+          dy: -277,
+          dx: 0
+        },{
+        type: d3.annotationCalloutCircle,
+          note: {
+            label: "More shots are taken in general from beyond the arc, perhaps from coaches and players noticing the higher efficiency from such shots.",
+            title: "General 3 point shots",
+            wrap: 190
+          },
+
+          subject: {
+            color: "red",
+            radius: 50
+          },
+          x: 520,
+          y: 230,
+          dy: -107,
+          dx: 10
+        }
+        ].map(function(d){ d.color = "red"; return d})
+
+        const makeAnnotations1 = d3.annotation()
+          .type(d3.annotationLabel)
+          .annotations(annotations1)
+
+        svg1
+          .append("g")
+          .attr("class", "annotation-group")
+          .call(makeAnnotations1)
+
+        const annotations2 = [
+        {
+
+          type: d3.annotationCalloutCircle,
+          note: {
+            label: "Longer 2s which have always statistically been less efficient are slowly starting to disappear from the game.",
+            title: "No more long 2s",
+            wrap: 190
+          },
+
+          subject: {
+            color: "red",
+            radius: 50
+          },
+          x: 240,
+          y: 330,
+          dy: -177,
+          dx: -30
+        },{
+        type: d3.annotationCalloutCircle,
+          note: {
+            label: "Modern day professional basketball has higher frequency 3s than ever. The secret of how efficient 3 point shooting really is is out.",
+            title: "Everyone's shooting 3s",
+            wrap: 190
+          },
+
+          subject: {
+            color: "red",
+            radius: 50
+          },
+          x: 520,
+          y: 230,
+          dy: -107,
+          dx: 10
+        }
+        ].map(function(d){ d.color = "red"; return d})
+
+        const makeAnnotations2 = d3.annotation()
+          .type(d3.annotationLabel)
+          .annotations(annotations2)
+
+        svg2
+          .append("g")
+          .attr("class", "annotation-group")
+          .call(makeAnnotations2)
+
+
    
 
 
@@ -233,14 +335,14 @@ for(var i = 0; i < array5.length; i++) {
       }
       if (array6[i][j] > 25 && array6[i][j] < 275) {
           svg0.append('circle')
-        .attr('cx', i*10+5)
+        .attr('cx', i*10+102.5)
         .attr('cy', 470 - (j*10+5))
         .attr('r', rScale(array6[i][j]+0.01))
         .attr('fill', color)
     }
     else if (array6[i][j] > 25) {
       svg0.append('circle')
-        .attr('cx', i*10+5)
+        .attr('cx', i*10+102.5)
         .attr('cy', 470 - (j*10+5))
         .attr('r', 8)
         .style('fill', color)
@@ -261,14 +363,14 @@ for(var i = 0; i < array3.length; i++) {
       }
       if (array4[i][j] > 25 && array4[i][j] < 275) {
           svg1.append('circle')
-        .attr('cx', i*10+5)
+        .attr('cx', i*10+102.5)
         .attr('cy', 470 - (j*10+5))
         .attr('r', rScale(array4[i][j]+0.01))
         .attr('fill', color)
     }
     else if (array4[i][j] > 25) {
       svg1.append('circle')
-        .attr('cx', i*10+5)
+        .attr('cx', i*10+102.5)
         .attr('cy', 470 - (j*10+5))
         .attr('r', 8)
         .attr('fill', color)
@@ -293,7 +395,7 @@ for(var i = 0; i < array.length; i++) {
     	}
     	if (array2[i][j] > 25 && array2[i][j] < 275) {
     	    svg2.append('circle')
-		    .attr('cx', i*10+5)
+		    .attr('cx', i*10+102.5)
 		    .attr('cy', 470 - (j*10+5))
 		    .attr('r', rScale(array2[i][j]+0.01))
 		    .attr('fill', color)
@@ -303,7 +405,7 @@ for(var i = 0; i < array.length; i++) {
         console.log("here")
       }
 			svg2.append('circle')
-		    .attr('cx', i*10+5)
+		    .attr('cx', i*10+102.5)
 		    .attr('cy', 470 - (j*10+5))
 		    .attr('r', 8)
 		    .style('fill', color)
